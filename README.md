@@ -1,26 +1,32 @@
-#Select2 for rails asset pipeline
+#Select2 for Rails asset pipeline
 
 [Select2](https://github.com/select2/select2) is a jQuery based replacement for select boxes. It supports searching, remote data sets, and infinite scrolling of results.
 
-The `select2-rails` gem integrates the `Select2` jQuery plugin with the Rails asset pipeline.
+This repo is a continuation of the dead [select2-rails](https://github.com/argerim/select2-rails) project.
+
+The `select2_rails` gem integrates the `Select2` jQuery plugin with the Rails asset pipeline.
 
 [![Gem Version](https://badge.fury.io/rb/select2-rails.png)](http://badge.fury.io/rb/select2-rails)
 
 ## Usage
 
-### Install select2-rails gem
+### Install select2_rails gem
 
-Add `select2-rails` to your Gemfile and run `bundle install`:
+Add `select2_rails` to your Gemfile and run `bundle install`:
 
-	gem "select2-rails"
+	gem "select2_rails"
 
-### Include select2-rails javascript assets
+### Include select2_rails javascript assets
 
 Add the following to your `app/assets/javascripts/application.js`:
 
 	//= require select2
 
-### Include select2-rails stylesheet assets
+alternatively, for the [full build](http://select2.github.io#builds):
+
+    //= require select2.full
+
+### Include select2_rails stylesheet assets
 
 Add to your `app/assets/stylesheets/application.css`:
 
@@ -38,7 +44,7 @@ To apply the theme, tell Select2 to do so by passing `bootstrap` to the [`theme`
 
 ## Internationalization (i18n)
 
-The `select2-rails` now supports multiple languages.
+The `select2_rails` now supports multiple languages.
 
 Add the following to your `app/assets/javascripts/application.js`:
 
@@ -48,11 +54,6 @@ Possible languages:
 
 	az, bg, ca, cs, da, de, en, es, et, eu, fi, fr, gl, hi, hr, hu, id, is, it, lt, lv, mk, nb, nl, pl, pt-BR, pt, ro, ru, sk, sr, sv, th, tr, uk, vi, zh-CN, zh-TW
 
-## Example
-Code [here](https://github.com/argerim/select_2_example)
-
-Heroku app [here](http://select-2-example.herokuapp.com/)
-
 ## Fix
 ### IE8 Invalid Character
 IE8 doesn't support some unescaped Unicode character and need to quote keys in object literals
@@ -61,11 +62,6 @@ Add to your `config/environments/production.rb`
 
        require 'uglifier'
        config.assets.js_compressor = Uglifier.new(output: {ascii_only: true, quote_keys: true})
-
-## Version
-From `v2.1.0` on, `select2-rails`'s version will match the version of `Select2` it uses.
-
-The last number of the version is the patch version specific to the gem. For example, for a version of the form `2.x.y`, `2.x` is the release of `Select2` we should be compatible with, and y is the patch version specific to the gem (ie. to resolve any gem-specific issues that crop up).
 
 ## Contributions
 
@@ -77,4 +73,4 @@ If you want to contribute, please:
 
 ## License
 
-Selec2-Rails is released under the [MIT License](http://www.opensource.org/licenses/MIT).
+selec2_rails is released under the [MIT License](http://www.opensource.org/licenses/MIT).
